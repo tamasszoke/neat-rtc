@@ -1,8 +1,11 @@
 # Neat-RTC
 
+![](https://img.shields.io/github/license/tamasszoke/neat-rtc.svg)
+
+
 WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling.
 
-Overview:
+#### Overview:
 
 	1. Install the package
 	2. Import, configure, create an instance
