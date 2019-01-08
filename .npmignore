@@ -1,0 +1,12 @@
+# nyc test coverage
+.nyc_output/
+
+# misc
+examples/
+node_modules/
+
+# config
+.babelrc
+.gitignore
+testConfig.js
+webpack.config.js
