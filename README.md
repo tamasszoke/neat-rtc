@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/license/tamasszoke/neat-rtc.svg)
 
 
-WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling.
+WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for React and Vue.
 
 #### Overview:
 

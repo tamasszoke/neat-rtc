@@ -20,6 +20,10 @@
     "p2p",
     "peer",
     "media",
+    "stream",
+    "getusermedia",
+    "data",
+    "datachannel",
     "react",
     "vue"
   ],
