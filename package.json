@@ -1,0 +1,46 @@
+{
+  "name": "neat-rtc",
+  "version": "1.0.0",
+  "description": "WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for React and Vue.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "nyc mocha --reporter spec",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamasszoke/neat-rtc.git"
+  },
+  "keywords": [
+    "neat",
+    "rtc",
+    "webrtc",
+    "signaling",
+    "p2p",
+    "peer",
+    "media",
+    "react",
+    "vue"
+  ],
+  "author": "Tamas Szoke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamasszoke/neat-rtc/issues"
+  },
+  "homepage": "https://github.com/tamasszoke/neat-rtc#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-react-jsx": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.4",
+    "nyc": "^13.1.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "webrtc-adapter": "^7.1.1"
+  }
+}
