@@ -1,7 +1,10 @@
 # Neat-RTC
 
+[![npm version](https://badge.fury.io/js/neat-rtc.svg)](https://badge.fury.io/js/neat-rtc)
+[![Inline docs](http://inch-ci.org/github/tamasszoke/neat-rtc.svg?branch=master)](http://inch-ci.org/github/tamasszoke/neat-rtc)
 ![](https://img.shields.io/github/license/tamasszoke/neat-rtc.svg)
 
+[![NPM](https://nodei.co/npm/neat-rtc.png?compact=true)](https://nodei.co/npm/neat-rtc/)
 
 WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for React and Vue.
 
@@ -11,7 +14,7 @@ WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for 
 	2. Import, configure, create an instance
 	3. Wire up signaling on client-side
 	4. Setup signaling on server-side
-	4. Using media stream, datachannel
+	5. Using media stream, datachannel
 
 ## Install
 
