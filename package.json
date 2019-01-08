@@ -1,6 +1,6 @@
 {
   "name": "neat-rtc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for React and Vue.",
   "main": "build/index.js",
   "scripts": {
