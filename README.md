@@ -26,7 +26,7 @@ WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for 
 
     import NeatRTC from 'neat-rtc';
 
-### Setup
+### Configure
 
     const config = {
       devMode: true,
@@ -48,11 +48,12 @@ WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for 
         }
       ]
     };
-
-
-    rtc = new NeatRTC(config, sendSignalingMessage);
     
 Important: you have to set up all of the callback functions above.
+
+### Create an instance
+
+    rtc = new NeatRTC(config, sendSignalingMessage);
 
 ### Signaling (Socket.IO rooms)
 
