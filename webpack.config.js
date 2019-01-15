@@ -28,8 +28,5 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       }
     ]
-  },
-  externals: {
-    'react': 'commonjs react'
   }
 }
