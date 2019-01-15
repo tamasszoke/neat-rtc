@@ -19,20 +19,29 @@ import adapter from 'webrtc-adapter'
 * @param {function} sendCallback
 */
 const NeatRTC = (config, sendCallback) => {
-  const DEVELOPMENT_MODE = config.devMode
-  const DATACHANNEL_CONFIG = config.datachannels
+  if (!config || !sendCallback) {
+    throw new Error('Parameters not set!')
+  }
+
+  const DEVELOPMENT_MODE = config.devMode || false
+  const DATACHANNEL_CONFIG = config.datachannels || []
   let peerConnection = []
   let datachannelList = []
   let streamLocal = null
   let streamRemote = null
   let streamLocalConnected = false
   let streamRemoteConnected = false
-  let videoIdLocal = config.videoIdLocal
-  let videoIdRemote = config.videoIdRemote
-  let connected = config.connected
-  let mediaStreamConnected = config.mediaStreamConnected
-  let mediaStreamRemoved = config.mediaStreamRemoved
-  let mediaStreamRemoteRemoved = config.mediaStreamRemoteRemoved
+  let videoIdLocal = config.videoIdLocal || false
+  let videoIdRemote = config.videoIdRemote || false
+  let connected = config.connected || false
+  let mediaStreamConnected = config.mediaStreamConnected || false
+  let mediaStreamRemoved = config.mediaStreamRemoved || false
+  let mediaStreamRemoteRemoved = config.mediaStreamRemoteRemoved || false
+
+  if (!videoIdLocal || !videoIdRemote || !connected || !mediaStreamConnected ||
+    !mediaStreamRemoved || !mediaStreamRemoteRemoved) {
+    throw new Error('Parameters not correctly set!')
+  }
 
   /**
   * Private functions
