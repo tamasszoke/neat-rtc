@@ -10,3 +10,4 @@ node_modules/
 .gitignore
 testConfig.js
 webpack.config.js
+.travis.yml
