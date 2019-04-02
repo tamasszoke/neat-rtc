@@ -149,7 +149,7 @@ Every datachannel message will arrive to the callback function you set to datach
 
 ## Examples
 
-Included working examples for React and Vue with a Node.js (Express, Socket.IO) server. You can download it on github. https://github,com/tamasszoke/neat-rtc
+Included working examples for React and Vue with a Node.js (Express, Socket.IO) server. You can download it on github. https://github.com/tamasszoke/neat-rtc
 
 You have to run a client (React or Vue) and the server separately.
 
