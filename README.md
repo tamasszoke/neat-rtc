@@ -5,7 +5,7 @@
 [![Inline docs](http://inch-ci.org/github/tamasszoke/neat-rtc.svg?branch=master)](http://inch-ci.org/github/tamasszoke/neat-rtc)
 ![](https://img.shields.io/github/license/tamasszoke/neat-rtc.svg)
 
-WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for React and Vue.
+WebRTC wrapper with built-in signaling for React and Vue.
 
 #### Overview:
 
@@ -13,7 +13,7 @@ WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for 
 	2. Import, configure, create an instance
 	3. Wire up signaling on client-side
 	4. Setup signaling on server-side
-	5. Using media stream, datachannel
+	5. Using mediastream, datachannel
 
 ## Install
 
@@ -48,7 +48,7 @@ WebRTC wrapper for peer-to-peer (P2P) communication with built-in signaling for 
       ]
     };
     
-Important: you have to set up all of the callback functions above.
+**Important:** you have to set up all of the callback functions above.
 
 ### Create an instance
 
@@ -58,7 +58,7 @@ Important: you have to set up all of the callback functions above.
 
 #### Client-side
     
-Start signaling if clients connected to the same room, messages from 'join' namespace.
+Start signaling when two client connects to the same room, using `join` namespace.
 
     join(message => {
       const { clientCount } = message;
@@ -67,13 +67,13 @@ Start signaling if clients connected to the same room, messages from 'join' name
       };
     })
 
-Use your Socket.IO send function, messages to 'signaling' namespace.
+Use your Socket.IO send function, messages **to** `signaling` namespace.
 
     sendSignalingMessage = (message) => {
       send('signaling', message);
     }
 
-Use your Socket.IO receive function, messages from 'signaling' namespace.
+Use your Socket.IO receive function, messages **from** `signaling` namespace.
 
     signaling(message => {
       rtc.handleSignaling(message);
@@ -81,7 +81,7 @@ Use your Socket.IO receive function, messages from 'signaling' namespace.
 
 #### Server-side
 
-Joining connected clients to a room, using 'join' namespace.
+Joining connected clients to a room, using `join` namespace.
 
     const join = (room) => {
       // Count clients in room
@@ -96,17 +96,17 @@ Joining connected clients to a room, using 'join' namespace.
       };
     }
 
-Messaging between clients during signaling, using 'signaling' namespace.
+Messaging between clients during signaling, using `signaling` namespace.
 
     socket.on('signaling', message => {
       socket.to(room).emit('signaling', message);
     })
 
-##### Note: you need to join the clients to the same room for signaling. You can find an example to this at the `./examples/server/` folder.
+**Note:** you need to join the clients to the same room for signaling. You can find an example to this at the `./examples/server/` folder.
 
-##### Alternatively you can use your custom method to send/receive signaling messages between the clients.
+**Tip:** alternatively you can use your custom method to send/receive signaling messages between the clients.
 
-## Using media stream, datachannel
+## Using mediastream, datachannel
 
 #### Start camera/mic
 
@@ -119,7 +119,7 @@ Better quality (hd720, hd1080)
 	rtc.media('start', { resolution: 'hd720' });
 	rtc.media('start', { resolution: 'hd1080' });
     
-Only voice (without video)
+Voice only (without video)
 
 	rtc.media('start', { voice: true });
     
@@ -141,7 +141,7 @@ The message can be a string or an object.
 
 #### Receive a message on datachannel
 
-Every datachannel message will arrive to the callback function you set to datachannel, in this case it's the 'datachannelMessage' function.
+Every datachannel message will arrive to the callback function you set, in this case it's the `datachannelMessage` function.
 
     datachannelMessage = (channel, message) => {
       console.log(channel, message);
@@ -149,20 +149,20 @@ Every datachannel message will arrive to the callback function you set to datach
 
 ## Examples
 
-Included working examples for React and Vue with a Node.js (Express, Socket.IO) server. You can download it on github. https://github,com/tamasszoke/neat-rtc
+Included [working examples](https://github.com/tamasszoke/neat-rtc) for React and Vue with a Node.js (Express, Socket.IO) server.
 
-You have to run a client (React or Vue) and the server separately.
+You have to run the client (React or Vue) and the server separately.
 
 Start with running these in the root folder `./`
 
     npm install
     npm run build
 
-To test the connection, open two browser tabs, they will connect automatically and you can use the built-in functions to try out media stream and datachannel.
+To test the connection, open two browser tabs, they will connect automatically and you can use the built-in functions to try out mediastream and datachannel.
 
 #### React
 
-Navigate to the `./examples/client/react/` folder
+Navigate to the `./examples/client/react/` folder and run
 
     npm install
     npm start
@@ -171,7 +171,7 @@ Module imported in: `./examples/client/react/src/App.js`
 
 #### Vue
 
-Navigate to the `./examples/client/vue/` folder
+Navigate to the `./examples/client/vue/` folder and run
 
     npm install
     npm run dev
@@ -180,14 +180,20 @@ Module imported in: `./examples/client/vue/src/components/Home.js`
 
 #### Server
 
-Navigate to the `./examples/server/` folder
+Navigate to the `./examples/server/` folder and run
 
     npm install
     npm start
     
 ## License
 
-<b>The MIT License (MIT)</b><br/>
-Copyright © 2019 Tamas Szoke
+**The MIT License (MIT)**<br/>
+Copyright (c) 2019 Tamas Szoke
 
-https://opensource.org/licenses/MIT
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)
