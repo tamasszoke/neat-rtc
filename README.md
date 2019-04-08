@@ -50,6 +50,34 @@ WebRTC wrapper with built-in signaling for React and Vue.
     
 **Important:** you have to set up all of the callback functions above.
 
+**RTCPeerConnection configuration** (optional)
+
+Add the following properties to the above `config` object.
+
+`connectionConfig`: set the STUN/TURN servers and other connection options, for more information check the [RTCConfiguration dictionary](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection#RTCConfiguration_dictionary).
+Default value: 
+        
+    {
+      iceServers: [
+        {
+          url: 'stun:stun.l.google.com:19302'
+        }
+      ]
+    }
+
+`optionalConfig`: set the optional connection configurations. Default value:
+
+    {
+      optional: [
+        {
+          DtlsSrtpKeyAgreement: true
+        },
+        {
+          RtpDataChannels: false
+        }
+      ]
+    }
+
 ### Create an instance
 
     rtc = new NeatRTC(config, sendSignalingMessage);

@@ -25,6 +25,8 @@ const NeatRTC = (config, sendCallback) => {
 
   const DEVELOPMENT_MODE = config.devMode || false
   const DATACHANNEL_CONFIG = config.datachannels || []
+  const CONNECTION_CONFIG = config.connectionConfig || null
+  const OPTIONAL_CONFIG = config.optionalConfig || null
   let peerConnection = []
   let datachannelList = []
   let streamLocal = null
@@ -52,14 +54,14 @@ const NeatRTC = (config, sendCallback) => {
   * @param {string} connectionType
   */
   const initConnection = (connectionType) => {
-    const CONFIGURATION = {
+    const CONFIGURATION = CONNECTION_CONFIG || {
       iceServers: [
         {
           url: 'stun:stun.l.google.com:19302'
         }
       ]
     }
-    const OPTIONAL = {
+    const OPTIONAL = OPTIONAL_CONFIG || {
       optional: [
         {
           DtlsSrtpKeyAgreement: true
