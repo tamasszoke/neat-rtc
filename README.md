@@ -7,7 +7,22 @@
 
 WebRTC wrapper with built-in signaling for React and Vue.
 
-#### Overview:
+## Roadmap
+
+These are the planned updates of the project.
+
+- Choose device option
+- File sharing example
+
+## Support
+
+If you like this project:
+
+[![ko-fi](https://i.ibb.co/pvbX9W7/kofi21.png)](https://ko-fi.com/Z8Z7XSML)
+
+Thank you!
+
+## Overview:
 
 	1. Install the package
 	2. Import, configure, create an instance
