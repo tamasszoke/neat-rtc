@@ -1,11 +1,12 @@
 # Neat-RTC
 
-[![npm version](https://badge.fury.io/js/neat-rtc.svg)](https://badge.fury.io/js/neat-rtc)
 [![Build Status](https://travis-ci.org/tamasszoke/neat-rtc.svg?branch=master)](https://travis-ci.org/tamasszoke/neat-rtc)
-[![Inline docs](http://inch-ci.org/github/tamasszoke/neat-rtc.svg?branch=master)](http://inch-ci.org/github/tamasszoke/neat-rtc)
+[![npm version](https://badge.fury.io/js/neat-rtc.svg)](https://badge.fury.io/js/neat-rtc)
 ![](https://img.shields.io/github/license/tamasszoke/neat-rtc.svg)
 
 WebRTC wrapper with built-in signaling for React and Vue.
+
+[Support the project](https://ko-fi.com/Z8Z7XSML)
 
 ## Roadmap
 
@@ -14,15 +15,7 @@ These are the planned updates of the project.
 - Choose device option
 - File sharing example
 
-## Support
-
-If you like this project:
-
-[![ko-fi](https://i.ibb.co/pvbX9W7/kofi21.png)](https://ko-fi.com/Z8Z7XSML)
-
-Thank you!
-
-## Overview:
+## Overview
 
 	1. Install the package
 	2. Import, configure, create an instance
@@ -190,6 +183,18 @@ Every datachannel message will arrive to the callback function you set, in this 
       console.log(channel, message);
     }
 
+## Summary
+
+| Function    | Parameters                       | Description |
+|:----------- |:---------------------------------|:------------|
+| <b>constructor</b> | `object`config,<br/>`function`sendCb | Initialize the module.<br/><b>config</b>:<br/>{<br/>&nbsp;&nbsp;`bool`devMode<br/>&nbsp;&nbsp;`string`videoIdLocal<br/>&nbsp;&nbsp;`string`videoIdRemote<br/>&nbsp;&nbsp;`function`mediaStreamConnected<br/>&nbsp;&nbsp;`function`mediaStreamRemoved<br/>&nbsp;&nbsp;`function`mediaStreamRemoteRemoved<br/>&nbsp;&nbsp;`object`datachannels<br/>}<br/><b>sendCb</b>:<br/>Callback for message sending through socket.io. Used in the signaling process. |
+| connect | - | Start a connection to the other peer. |
+| disconnect | - | End the connection. |
+| handleSignaling | `object`message | Handle messaging during the signaling. |
+| checkConnection | `string`channel | Check if the connection is alive. |
+| media | `string`type,<br/>`object`options | Control the camera/microphone.<br/><b>type</b>:<br/>`start` / `stop` / `stopRemote`<br/><b>options</b>:<br/>{<br/>&nbsp;&nbsp;`string`resolution: `hd720` / `hd1080`<br/>&nbsp;&nbsp;`bool`voice<br/>} |
+| send | `string`channel<br/>`object`message | Send a message on a datachannel. |
+
 ## Examples
 
 Included [working examples](https://github.com/tamasszoke/neat-rtc) for React and Vue with a Node.js (Express, Socket.IO) server.
@@ -227,7 +232,7 @@ Navigate to the `./examples/server/` folder and run
 
     npm install
     npm start
-    
+
 ## License
 
 **The MIT License (MIT)**<br/>
