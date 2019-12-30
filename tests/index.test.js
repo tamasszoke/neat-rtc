@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import NeatRTC from '../build/index.js';
+import NeatRTC from '../dist/index.js';
 
 describe('NeatRTC Component', () => {
 
@@ -33,12 +33,36 @@ describe('NeatRTC Component', () => {
     expect(() => { rtc = new NeatRTC(configNotValid); }).to.throw('Parameters not set!') &&
     expect(() => { rtc = new NeatRTC(configNotValid, () => {}); }).to.throw('Parameters not correctly set!') &&
     expect(() => { rtc = new NeatRTC(config, () => {}); }).to.not.throw(Error) &&
-    expect(rtc).to.be.an('object') &&
-    expect(rtc).to.have.property('connect') &&
-    expect(rtc).to.have.property('disconnect') &&
-    expect(rtc).to.have.property('handleSignaling') &&
-    expect(rtc).to.have.property('checkConnection') &&
-    expect(rtc).to.have.property('media') &&
+    expect(rtc).to.be.an('object');
+  })
+
+  it('should have the connect property', () => {
+    let rtc = new NeatRTC(config, () => {});
+    expect(rtc).to.have.property('connect');
+  })
+
+  it('should have the disconnect property', () => {
+    let rtc = new NeatRTC(config, () => {});
+    expect(rtc).to.have.property('disconnect');
+  })
+
+  it('should have the handleSignaling property', () => {
+    let rtc = new NeatRTC(config, () => {});
+    expect(rtc).to.have.property('handleSignaling');
+  })
+
+  it('should have the checkConnection property', () => {
+    let rtc = new NeatRTC(config, () => {});
+    expect(rtc).to.have.property('checkConnection');
+  })
+
+  it('should have the media property', () => {
+    let rtc = new NeatRTC(config, () => {});
+    expect(rtc).to.have.property('media');
+  })
+
+  it('should have the send property', () => {
+    let rtc = new NeatRTC(config, () => {});
     expect(rtc).to.have.property('send');
   })
 })
