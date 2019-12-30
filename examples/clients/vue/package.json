@@ -17,7 +17,8 @@
     "socket.io-client": "^2.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "webrtc-adapter": "^7.1.1"
+    "webrtc-adapter": "^7.1.1",
+    "neat-rtc": "^1.0.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
