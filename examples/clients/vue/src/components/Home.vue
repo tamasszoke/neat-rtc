@@ -71,7 +71,7 @@ export default {
       const { clientCount } = message
       if (clientCount === 2) {
         this.rtc.connect()
-      };
+      }
     })
     // Socket.IO signaling messages from server
     signaling(message => {
