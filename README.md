@@ -208,6 +208,13 @@ Start with running these in the root folder `./`
 
 To test the connection, open two browser tabs, they will connect automatically and you can use the built-in functions to try out mediastream and datachannel.
 
+#### Server
+
+Navigate to the `./examples/server/` folder and run
+
+    npm install
+    npm start
+
 #### React
 
 Navigate to the `./examples/client/react/` folder and run
@@ -217,21 +224,22 @@ Navigate to the `./examples/client/react/` folder and run
 
 Module imported in: `./examples/client/react/src/App.js`
 
+**Note:** on linux you may need to increase the file watcher limit: 
+
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+    
+You may also need to add a `.env` file with the following content:
+
+    SKIP_PREFLIGHT_CHECK=true
+
 #### Vue
 
 Navigate to the `./examples/client/vue/` folder and run
 
     npm install
-    npm run dev
+    npm run serve
 
 Module imported in: `./examples/client/vue/src/components/Home.js`
-
-#### Server
-
-Navigate to the `./examples/server/` folder and run
-
-    npm install
-    npm start
 
 ## License
 
